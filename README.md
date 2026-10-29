@@ -3,7 +3,7 @@
 Material suplementar do Trabalho de Conclusão de Curso em Engenharia Civil — Centro Universitário CESUCA, Cachoeirinha/RS.
 
 **Autor:** Nicolas Mateus Tuszynsky de Moura  
-**Orientador:** Prof. Dr. Laercio Antonio Krein
+**Orientador:** Prof. Dr. Cristian Jonathan Franco de Lima
 
 ## Sobre o trabalho
 
