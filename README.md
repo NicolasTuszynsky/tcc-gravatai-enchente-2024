@@ -1,5 +1,7 @@
 # Urbanização na planície de inundação do rio Gravataí: análise da enchente de 2024
 
+[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NicolasTuszynsky/tcc-gravatai-enchente-2024/blob/main/TCC_Nicolas_Analise_Geoespacial_ANOTADO.ipynb)
+
 Material suplementar do Trabalho de Conclusão de Curso em Engenharia Civil — Centro Universitário CESUCA, Cachoeirinha/RS.
 
 **Autor:** Nicolas Mateus Tuszynsky de Moura  
@@ -43,8 +45,9 @@ Todas as bases são públicas e gratuitas, e são obtidas automaticamente pelo p
 
 ## Como reproduzir
 
-1. Abra o notebook no [Google Colab](https://colab.research.google.com) (Arquivo → Abrir notebook → GitHub, e cole o endereço deste repositório)
-2. Execute **Ambiente de execução → Executar tudo**
+1. Clique no botão **Abrir no Colab** no topo desta página, ou acesse diretamente:
+   <https://colab.research.google.com/github/NicolasTuszynsky/tcc-gravatai-enchente-2024/blob/main/TCC_Nicolas_Analise_Geoespacial_ANOTADO.ipynb>
+2. Execute **Ambiente de execução → Executar tudo** (no primeiro aviso, confirme "Executar mesmo assim")
 
 Não é necessário ter nenhum arquivo salvo previamente: todos os dados de entrada são baixados automaticamente. A conexão com o Google Drive é opcional e serve apenas para guardar uma cópia dos resultados.
 
