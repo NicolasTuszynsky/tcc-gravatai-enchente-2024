@@ -6,7 +6,7 @@ Material suplementar do Trabalho de Conclusão de Curso em Engenharia Civil — 
 
 **Autor:** Nicolas Mateus Tuszynsky de Moura  
 **Orientador:** Prof. Dr. Cristian Jonathan Franco de Lima  
-**Coorientador:** Prof. Dr. Laercio Antonio Krein
+**Coorientador:** Prof. Dr. Laércio Antonio Krein
 
 ## Sobre o trabalho
 
