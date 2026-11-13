@@ -40,7 +40,7 @@ Os percentuais de área atingida são estimativas conservadoras: sensores óptic
 Todas as bases são públicas e gratuitas, e são obtidas automaticamente pelo próprio notebook:
 
 - **Limite municipal** — IBGE, via biblioteca `geobr`
-- **Uso e cobertura do solo (2009 e 2024)** — MapBiomas, Coleção 10
+- **Uso e cobertura do solo (2009 e 2024)** — MapBiomas, Coleção 10 (desde nov/2026 o acesso exige um projeto próprio do Earth Engine; ver *Como reproduzir*)
 - **Suscetibilidade a inundação** — SGB/CPRM, carta de Gravataí/RS (método HAND)
 - **Mancha de inundação de maio de 2024** — Possantti et al. (2024), repositório Zenodo
 
@@ -48,10 +48,30 @@ Todas as bases são públicas e gratuitas, e são obtidas automaticamente pelo p
 
 1. Clique no botão **Abrir no Colab** no topo desta página, ou acesse diretamente:
    <https://colab.research.google.com/github/NicolasTuszynsky/tcc-gravatai-enchente-2024/blob/main/TCC_Nicolas_Analise_Geoespacial_ANOTADO.ipynb>
-2. Execute **Ambiente de execução → Executar tudo** (no primeiro aviso, confirme "Executar mesmo assim")
+2. Na **Etapa 0**, substitua o valor de `EE_PROJECT` pelo ID de um projeto **seu** do Google Cloud com o Earth Engine habilitado (ver abaixo por que isso é necessário)
+3. Execute **Ambiente de execução → Executar tudo** (no primeiro aviso, confirme "Executar mesmo assim") e autorize o Earth Engine quando solicitado
 
-Não é necessário ter nenhum arquivo salvo previamente: todos os dados de entrada são baixados automaticamente. A conexão com o Google Drive é opcional e serve apenas para guardar uma cópia dos resultados.
+Todos os dados de entrada são baixados automaticamente — não é preciso ter nenhum arquivo salvo previamente. A conexão com o Google Drive é opcional e serve apenas para guardar uma cópia dos resultados.
+
+### Por que é preciso um projeto do Earth Engine
+
+Os dados de uso e cobertura do solo foram obtidos em **19/08/2026** por acesso direto ao bucket público do MapBiomas em `storage.googleapis.com`, sem nenhum cadastro.
+
+Em **13/11/2026** verificou-se que esse bucket passou a negar `storage.objects.get`, retornando `AccessDenied` tanto para chamadas anônimas quanto para contas Google autenticadas. A Coleção 10 continua pública e gratuita, mas a via de acesso mantida pelo MapBiomas passou a ser o asset no Google Earth Engine.
+
+O notebook tenta primeiro o endereço original — se o acesso público for restabelecido, ele volta a funcionar sem nenhuma alteração — e, se falhar, lê a mesma Coleção 10 pelo asset `projects/mapbiomas-public/assets/brazil/lulc/v1`.
+
+O Earth Engine é gratuito para uso acadêmico e, no nível Comunidade, **não exige conta de faturamento nem cartão de crédito**. O cadastro leva poucos minutos:
+
+1. Acesse <https://code.earthengine.google.com> e registre-se
+2. Crie um projeto no Google Cloud e registre-o para **uso não comercial**, nível **Comunidade**
+3. Ative a **Google Earth Engine API** no projeto
+4. Informe o **ID do projeto** no campo `EE_PROJECT` da Etapa 0
+
+O valor de `EE_PROJECT` que consta no notebook é o projeto do autor e não funciona para outras contas.
+
+As demais bases — IBGE, SGB/CPRM e Possantti et al. (2024) — continuam acessíveis sem qualquer cadastro.
 
 ## Ferramentas
 
-Python (`geopandas`, `rasterio`, `shapely`, `geobr`, `matplotlib`), em ambiente Google Colab.
+Python (`geopandas`, `rasterio`, `shapely`, `geobr`, `matplotlib`, `earthengine-api`, `geemap`), em ambiente Google Colab.
